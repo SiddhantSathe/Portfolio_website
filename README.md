@@ -1,2 +1,2 @@
 # Portfolio_website
-This a simple portfolio website made using HTML and CSS
+This a my portfolio website made using HTML and CSS
