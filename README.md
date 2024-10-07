@@ -1,6 +1,6 @@
 # Portfolio_website
 This a my portfolio website made using HTML and CSS
-<h1 align="center">Hi 👋, I'm SiddhantSathe</h1>
+<h1 align="center">Hi 👋, I'm Siddhant Sathe</h1>
 <h4>Hey there, my name is Siddhant Sathe. I am a second-year engineering student at Vivekanand Educational Society's Institute of Technology and a junior member of the VESLang Circle.Throughout my academic career, I have participated in a variety of projects and activities that have influenced my talents and interests. Working on the E-waste Facility Locator for the Smart India Hackathon was one of my most remarkable efforts. I am now working on an Academic Project Management System.Aside from academics, I am interested in programming and have learnt languages such as HTML, CSS, SQL, Java, C, C++, and Python. I am now exploring web development, Database management and Java. In addition, I have practical knowledge with graphic design software such as Adobe Photoshop, Adobe Illustrator and Canva.Beyond my technical pursuits, I have a keen interest in graphic designing, and I take pride in my achievements as a badminton player, having won two medals at the professional level.🤓</h4>
 
 
