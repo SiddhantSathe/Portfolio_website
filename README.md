@@ -1,6 +1,6 @@
 # Siddhant Sathe - Personal Portfolio Website
 
-This repository contains the code for a personal portfolio website for Siddhant Sathe, a second-year engineering student and a junior member at the VESLang Circle. The website showcases Siddhant's academic projects, interests, skills, and contact information.
+This repository contains the code for a personal portfolio website for Siddhant Sathe, a third-year engineering student and a senior member at the VESLang Circle. The website showcases Siddhant's academic projects, interests, skills, and contact information.
 
 ## Table of Contents
 
@@ -38,7 +38,7 @@ To set up this project on your local machine:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/username/portfolio-website.git
+   git clone https://github.com/SiddhantSathe/portfolio-website.git
    ```
 
 2. Navigate to the project folder:
