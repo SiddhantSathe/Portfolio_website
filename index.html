@@ -2,16 +2,361 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="asd.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Siddhant Sathe - Portfolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Bebas+Neue&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 8%;
+            background-color: #4d4d4d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 600;
+            font-family: 'Croissant One', cursive;
+            text-decoration: none;
+            color: #cbcaa5;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: #fff;
+        }
+
+        .nav-link {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-link a {
+            font-size: 18px;
+            font-weight: 400;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            color: #cbcaa5;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #73a0a5;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link a:hover::after {
+            width: 100%;
+        }
+
+        .nav-link a:hover {
+            color: #fff;
+        }
+
+        .home {
+            min-height: 100vh;
+            background: linear-gradient(-90deg, #334d50 65%, #fff 35%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 100px 10% 50px;
+            gap: 50px;
+        }
+
+        .home-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            height: 400px;
+            background: #cbcaa5;
+            border: 20px solid #fff;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+        }
+
+        .home-img img {
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .home-content {
+            max-width: 600px;
+            color: #faebd7;
+            text-align: right;
+        }
+
+        .home-content h1 {
+            font-size: 52px;
+            line-height: 1.2;
+            color: #cbcaa5;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .home-content h3 {
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .home-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #e8e8e8;
+        }
+
+        .home-icon {
+            margin: 25px 0 35px;
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+
+        .home-icon a {
+            display: inline-flex;
+            width: 45px;
+            height: 45px;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            border: 2px solid #cbcaa5;
+            border-radius: 50%;
+            font-size: 22px;
+            color: #cbcaa5;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .home-icon a:hover {
+            background: #73a0a5;
+            color: #fff;
+            border-color: #73a0a5;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(115, 160, 165, 0.4);
+        }
+
+        .btn {
+            padding: 12px 35px;
+            background: #73a0a5;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            color: #fff;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid #73a0a5;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: #73a0a5;
+            border-color: #73a0a5;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(115, 160, 165, 0.3);
+        }
+
+        .about {
+            min-height: 100vh;
+            background: linear-gradient(90deg, #334d50 65%, #cbcaa5 35%);
+            display: flex;
+            align-items: center;
+            
+            padding: 100px 10% 50px;
+        }
+
+        .content {
+            max-width: 600px;
+            color: #faebd7;
+        }
+
+        .content h3 {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #e8e8e8;
+            margin-bottom: 25px;
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        .content h3:first-child {
+            font-size: 24px;
+            color: #cbcaa5;
+            margin-bottom: 30px;
+        }
+
+        .project {
+            min-height: 100vh;
+            background: #334d50;
+            padding: 100px 10% 50px;
+        }
+
+        .project-title {
+            text-align: center;
+            font-size: 48px;
+            color: #cbcaa5;
+            margin-bottom: 60px;
+            font-weight: 600;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .prj-img {
+            width: 320px;
+            height: 320px;
+            background: #cbcaa5;
+            border: 15px solid #cbcaa5;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .prj-img:hover {
+            transform: scale(1.05);
+        }
+
+        .prj-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .contact {
+            min-height: 30vh;
+            background: #4d4d4d;
+            color: #cbcaa5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 10%;
+            gap: 20px;
+        }
+
+        .contact h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .contact-email {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .contact-email i {
+            font-size: 24px;
+        }
+
+        @media (max-width: 1024px) {
+            .home {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 120px;
+            }
+
+            .home-content {
+                text-align: center;
+            }
+
+            .home-icon {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-link {
+                gap: 20px;
+            }
+
+            .nav-link a {
+                font-size: 16px;
+            }
+
+            .home-content h1 {
+                font-size: 38px;
+            }
+
+            .home-content h3 {
+                font-size: 22px;
+            }
+
+            .home-img {
+                width: 300px;
+                height: 300px;
+            }
+
+            .home-img img {
+                width: 260px;
+                height: 260px;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <main class="main-doc">
-       <header class="header"><a href="#" class="logo">Siddhant Sathe</a>
-        <nav id="navbar" class="nav-link">
+    <header class="header">
+        <a href="#" class="logo">Siddhant Sathe</a>
+        <nav class="nav-link">
             <a href="#homepage">Home</a>
             <a href="#aboutpage">About</a>
             <a href="#projectpage">Projects</a>
@@ -20,55 +365,65 @@
     </header>
         
     <section class="home" id="homepage">
-        <div class="home-img"><img src="Profilepic.jpeg"></div>
+        <div class="home-img">
+            <img src="Profilepic.jpeg" alt="Siddhant Sathe">
+        </div>
         <div class="home-content">
             <h1>Hi, I'm Siddhant Sathe</h1>
             <h3>Undergraduate Student</h3>
-            <p>Student at Vivekanand Education Society's Institute Of Technology  Senior Member at VESLang Circle</p>
+            <p>Student at Vivekanand Education Society's Institute Of Technology. Senior Member at VESLang Circle</p>
             <div class="home-icon">
-                <a href="https://www.instagram.com/siddhant__sathe/"><i class='bx bxl-instagram'></i></a>
-                <a href="https://www.linkedin.com/in/siddhant-sathe-0709ab282"><i class='bx bxl-linkedin' ></i></a>
-                <a href="https://github.com/SiddhantSathe"><i class='bx bxl-github' ></i></a>
+                <a href="https://www.instagram.com/siddhant__sathe/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.linkedin.com/in/siddhant-sathe-0709ab282" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/SiddhantSathe" aria-label="GitHub"><i class='bx bxl-github'></i></a>
             </div>
             <a class="btn" href="#aboutpage">Know more</a>
         </div>
     </section>
-    <section class="about" bgcolor="#334d50" id="aboutpage">
-        <div class="bg">
-        <div class="content">
-            <h3>Hey there, my name is Siddhant Sathe. I am a third-year engineering student at Vivekanand Educational Society's Institute of Technology and a senior member of the VESLang Circle.</h3><h3>
-                Throughout my academic career, I have participated in a variety of projects and activities that have influenced my talents and interests. Working on the E-waste Facility Locator for the Smart India Hackathon was one of my most remarkable efforts. I am now working on an Academic Project Management System.</h3><h3>
-                Aside from academics, I am interested in programming and have learnt languages such as HTML, CSS, SQL, Java, C, C++, and Python. I am now exploring web development, Database management and Java. In addition, I have practical knowledge with graphic design software such as Adobe Photoshop, Adobe Illustrator and Canva.
-                Beyond my technical pursuits, I have a keen interest in graphic designing, and I take pride in my achievements as a badminton player, having won two medals at the professional level.</h3>
 
-        </div>
+    <section class="about" id="aboutpage">
+        <div class="content">
+            <h3>Hey there, my name is Siddhant Sathe. I am a third-year engineering student at Vivekanand Educational Society's Institute of Technology and a senior member of the VESLang Circle.</h3>
+            <h3>Throughout my academic career, I have participated in a variety of projects and activities that have influenced my talents and interests. Working on the E-waste Facility Locator for the Smart India Hackathon was one of my most remarkable efforts. I am now working on an Academic Project Management System.</h3>
+            <h3>Aside from academics, I am interested in programming and have learnt languages such as HTML, CSS, SQL, Java, C, C++, and Python. I am now exploring web development, Database management and Java. In addition, I have practical knowledge with graphic design software such as Adobe Photoshop, Adobe Illustrator and Canva. Beyond my technical pursuits, I have a keen interest in graphic designing, and I take pride in my achievements as a badminton player, having won two medals at the professional level.</h3>
         </div>
     </section>
+
     <section class="project" id="projectpage">
-        <div class="bg">
-        <div class="Circle">
-        <div class="prj1-img"><img src="ggcoverpage.jpg"></div>
-        <div class="prj1-img"><img src="portfoliocoverpage.jpg"></div>
-        <div class="prj1-img"><img src="td coverpage.jpg"></div>
-        
-            <a href="index.html" class="btn" id="button">Green Gadget</a>
-            <a href="#" class="btn" id="button">Portfolio website</a>
-            <a href="" class="btn" id="button">Technical Documentation</a>
-        
-    </div>
-        
+        <h2 class="project-title">My Projects</h2>
+        <div class="project-grid">
+            <div class="project-item">
+                <div class="prj-img">
+                    <img src="ggcoverpage.jpg" alt="Green Gadget Project">
+                </div>
+                <a href="index.html" class="btn">Green Gadget</a>
+            </div>
+            <div class="project-item">
+                <div class="prj-img">
+                    <img src="portfoliocoverpage.jpg" alt="Portfolio Website">
+                </div>
+                <a href="#" class="btn">Portfolio Website</a>
+            </div>
+            <div class="project-item">
+                <div class="prj-img">
+                    <img src="td coverpage.jpg" alt="Technical Documentation">
+                </div>
+                <a href="#" class="btn">Technical Documentation</a>
+            </div>
         </div>
     </section>
+
     <section class="contact" id="contactpage">
         <h1>Contact Me</h1>
-       <div><i class='bx bx-envelope'> : 2022.siddhant.sathe@ves.ac.in</i></div>
+        <div class="contact-email">
+            <i class='bx bx-envelope'></i>
+            <span>2022.siddhant.sathe@ves.ac.in</span>
+        </div>
         <div class="home-icon">
-            <a href="https://www.instagram.com/siddhant__sathe/" class="shift"><i class='bx bxl-instagram'></i></a>
-            <a href="https://www.linkedin.com/in/siddhant-sathe-0709ab282"><i class='bx bxl-linkedin' ></i></a>
-            <a href="https://github.com/SiddhantSathe"><i class='bx bxl-github' ></i></a>
+            <a href="https://www.instagram.com/siddhant__sathe/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+            <a href="https://www.linkedin.com/in/siddhant-sathe-0709ab282" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/SiddhantSathe" aria-label="GitHub"><i class='bx bxl-github'></i></a>
         </div>
     </section>
-    </main>
-    
 </body>
 </html>
